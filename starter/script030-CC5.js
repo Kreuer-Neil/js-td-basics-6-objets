@@ -40,3 +40,26 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 
 BONNE CHANCE 😀
 */
+
+
+
+const factures = {
+    prices: [124, 48, 368, 180, 42],
+    tips: [],
+    generateTips() {
+        this.prices.forEach(p => this.addTips(p))
+    },
+    addTips(price) {
+        console.log(price);
+        if (price < 100) {
+            this.tips.push(price*0.2);
+        }
+        if (price >= 100 && price < 300) {
+            this.tips.push(price*0.1);
+        }
+        if (price >= 300) {
+            this.tips.push(price*0.25);
+        }
+    }
+}
+factures.generateTips();

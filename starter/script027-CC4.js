@@ -16,3 +16,44 @@ Rappel: BMI = poids / taille^2 = poids / (taille * taille). (poids en kg and tai
 
 BONNE CHANCE 😀
 */
+
+
+
+function initPersonne(nom,prenom,taille,poids) {
+
+    return {
+        nom : nom,
+        prenom : prenom,
+        taille : taille,
+        poids : poids,
+
+        calculImc() {
+            return this.poids / Math.pow(this.taille,2);
+        }
+    }
+}
+
+const p1 = initPersonne("Jonnie", "Jean", 1.70,49);
+const p2 = initPersonne("Z", "MA", 1.82,86);
+
+const people = [];
+people.push(p1,p2);
+
+for (const person of people) {
+    console.log(person.calculImc());
+}
+
+for (let i = 0; i < people.length; i++) {
+    console.log(people[i].calculImc());
+}
+
+let j = 0;
+while (j<people.length) {
+    console.log(people[j].calculImc());
+    j++;
+}
+
+
+people.forEach(function (p) {console.log(this);});
+
+people.forEach(p => console.log(p));
